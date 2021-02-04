@@ -52,8 +52,8 @@ nav {
   z-index: 10;
 }
 
-nav .odskrolovano {
-  background: rgba(#111, 0.9);
+.odskrolovano {
+  background: #111;
 }
 
 nav ul {

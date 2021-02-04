@@ -1,5 +1,5 @@
-var $headline = $('.headline'),
-    $inner = $('.inner'),
+var $headline = $('.hlavniPlocha'),
+    $inner = $('.vnitrniPlocha'),
     $nav = $('nav'),
     navHeight = 75;
 
