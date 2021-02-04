@@ -81,6 +81,12 @@ nav li {
   }
 }
 
+@media print {
+  header {
+    display: none;
+  }
+}
+
 nav a {
   font-size: 0.9em;
   color: #fff;
