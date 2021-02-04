@@ -23,12 +23,40 @@
         </header>
         <section>
             <h2>Daň z příjmu</h2>
-            <p>Obsah stránky</p>
+            <p>Výpočet daně z přijmu je důležitý nejen pro samotné zaplacení této daně, ale i pro výpočet základu pro ostatní platby.</p>
+            <h3>Které faktury zahrnout?</h3>
+            <p>Do výpočtu se zahrnují faktury, u kterých je <strong>datum přijetí platby</strong> v aktuálním roce - přičemž nezáleží na datu vydání faktury.</p>
+            <p>Příklad 1: <em>Faktura vydaná 31. 12. 2020 a odběratelem zaplacená 10. 1. 2021 se počítá do daní v roce 2021.</em></p>
+            <p>Příklad 1: <em>Faktura vydaná 31. 1. 2020 a odběratelem zaplacená 10. 2. 2021 se počítá do daní v roce 2021.</em></p>
+            <p>Příklad 1: <em>Faktura vydaná 31. 12. 2020 a odběratelem stále nezaplacená se bude do daní započítávat až po jejím zaplacení.</em></p>
+            <p><strong>POZOR</strong> - toto jsou odlišná pravidla, než platí pro Daň z přidané hodnoty!</p>
+            <h3>Jak vypočítat?</h3> 
+            <p><strong>Sumu příjmu</strong> \(P\) získám sečtením celkových hodnot vydaných faktur bez DPH platných v daném roce.</p>
+            <p><strong>Procento výdajů</strong> \(s_{ex}\) získám porovnáním mé určené činnosti se <a href="https://www.financnisprava.cz/cs/dane/dane/dan-z-prijmu/dotazy-a-odpovedi/dan-z-prijmu-fyzickych-osob/aktualne-k-dani-z-prijmu-fyzickych-osob-2019-10265">seznamem Ministertva financí</a>. Pro většinu OSVČ se bude jednat o \(s_{ex} = 0.6\).</p>
+            <p><strong>Strop výdajů</strong> \(E_{max}\) získám ze stejné tabulky, jako \(s_{ex}\). Pro většinu OSVČ \(E_{max} = 1200000\).</p>
+            <p><strong>Výše výdajů</strong> \(E\) získám buďto sečtením celkových hodnot přijatých faktur bez DPH platných v daném roce, nebo výpočtem níže - můžu si vybrat, kterou hodnotu preferuji. Většinou vybíráme tu větší.</p>
+            \[E=\min{\{E_{max},P * s_{ex}\}}\]
+            <br />
+            <p><strong>Čistý základ daně</strong> \(B\)</p>
+            \[B=P-E\]
+            <p><strong>Základ daně</strong> \(B_c\) získám odečtením odečítatelných položek od čistého základu daně - odečet úroků hypotéky, penzijního nebo životního pojištění, apod.</p>
+            <p><strong>Hrubá výše daně</strong> \(T\)</p>
+            \[T=B_c * 0.15\]
+            <p><strong>Hrubou výši daně po slevě</strong> \(T_s\) získám odečtením daňových slev od hrubé výše daně - sleva na poplatníka, sleva na dítě, apod.</p>
+            <p><strong>Čistá výši daně</strong> \(T_c\) získám zaokrouhlením \(T_s\) na celé stokoruny nahoru.</p>
+            <h3>Budu příští rok platit zálohy?</h3>
+            <ul>
+                <li>Je-li \(T_c \geq 100000\), poté platím čtyřikrát ročně zálohy ve výši \(0.25 * T_c\).</li>
+                <li>Je-li \(T_c < 100000 \land T_c \geq 30000\), poté platím dvakrát ročně zálohy ve výši \(0.4 * T_c\).</li>
+                <li>Je-li \(T_c < 30000\), zálohy platit nemusím.</li>
+            </ul>
         </section>
         <footer>
             <p>Studentský zápočtový projekt - 2021 Vojtěch Zicha.</p>
         </footer>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
         <script src="layout.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
