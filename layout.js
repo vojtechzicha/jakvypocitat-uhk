@@ -15,8 +15,8 @@ $(window).scroll(function() {
     'transform': 'translateY('+ scrollTop * 0.4 +'px)'
   });
   if (navOffset > headlineHeight) {
-    $nav.addClass('scrolled');
+    $nav.addClass('odskrolovano');
   } else {
-    $nav.removeClass('scrolled');
+    $nav.removeClass('odskrolovano');
   }
 });
