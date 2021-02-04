@@ -23,12 +23,25 @@
         </header>
         <section>
             <h2>Zdravotní pojištění</h2>
-            <p>Obsah stránky</p>
+            <p>Výpočet zdravotního pojištění provádíme po dokončení výpočtu daně z příjmu - potřebujeme znát hodnotu čistého základu daně z příjmu \(B\).</p>
+            <h3>Jak vypočítat?</h3> 
+            <p><strong>Základ zdravotního pojištění</strong> \(B_s\)</p>
+            \[B_s=0.5 * B\]
+            <p><strong>Použitý základ zdravotního pojištění</strong> \(B_{Y}\)</p>
+            \[B_Y=\max{\{B_s, 212646\}}\]
+            <p><strong>Výše zdravotního pojištění</strong> \(T\)</p>
+            \[T=0.135*B_Y\]
+            <p>Doplatek na zdravotním pojištěním zjistím odečtením zaplacených záloh od \(T\).</p>
+            <h3>Jaké budu příští rok platit zálohy?</h3>
+            <p><strong>Výše následných záloh</strong> \(T_p\)</p>
+            \[T_p=\frac{1}{12} * T\]
         </section>
         <footer>
             <p>Studentský zápočtový projekt - 2021 Vojtěch Zicha.</p>
         </footer>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
         <script src="layout.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

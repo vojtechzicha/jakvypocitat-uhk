@@ -10,8 +10,8 @@
             <ul>
                 <li><a href="index.html">Domů</a></li>
                 <li><a href="tax.html">Daň z přijmu</a></li>
-                <li><a href="social.html">Sociální pojištění</a></li>
                 <li><a href="health.html">Zdravotní pojištění</a></li>
+                <li><a href="illness.html">Nemocenské pojištění</a></li>
             </ul>
         </nav>
         <header>
@@ -23,12 +23,18 @@
         </header>
         <section>
             <h2>Nemocenské pojištění</h2>
-            <p>Obsah stránky</p>
+            <p>Výpočet nemocenského pojištění provádíme po dokončení výpočtu sociálního pojištění - potřebujeme znát hodnotu určeného základu sociálního pojištění \(B_u\).</p>
+            <p>Nemocenské pojištění je pro OSVČ dobrovolné - sami si můžeme zvolit, zda si jej budeme připlácet.</p>
+            <h3>Jak vypočítat?</h3>
+            <p><strong>Výše měsíční platby pojištění</strong> \(T\)</p>
+            \[T=\max{\{0.021*B_u, 147\}}\]
         </section>
         <footer>
             <p>Studentský zápočtový projekt - 2021 Vojtěch Zicha.</p>
         </footer>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
         <script src="layout.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
